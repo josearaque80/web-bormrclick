@@ -1,0 +1,42 @@
+{% extends 'core/base.html' %}
+{% block title %}
+Sample
+{% endblock %}
+{% block content %}
+    <section class="page-section about-heading">
+      <div class="container">
+        <div class="about-heading-content mbtm">
+          <div class="row">
+            <div class="col-xl-9 col-lg-10 mx-auto">
+              <div class="bg-faded rounded p-5 forced">
+                <h2 class="section-heading mb-4">
+                  <span class="section-heading-lower">{{ page.title }}</span>
+                </h2>
+                  <!--inicio card-->
+                    <div class="card-group">
+                {% for image in post.gallery_images.all %}
+                          <div class="card">
+                            <img class="card-img-top" src="{{ image.image.url }}" alt="{{ image.title }}">
+                            <div class="card-body">
+                              <h5 class="card-title">{{ image.title }}</h5>
+                              <p class="card-text">{{ image.description }}</p>
+                              <p class="card-text"><small class="text-muted">Publicado el {{ image.published|date:"F j, Y" }}</small></p>
+                            </div>
+                          </div>
+                        {% endfor %}
+
+                    </div>
+                  <!--fin card-->
+
+                                <!-- Agregar enlace para volver a la plantilla de blog -->
+                  <p class="mt-4">
+                    <a href="{% url 'blog' %}" class="btn btn-primary">Volver al Blog</a>
+                  </p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}

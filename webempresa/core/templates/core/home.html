@@ -1,0 +1,42 @@
+{% extends 'core/base.html' %}
+{% block title %}
+Inicio
+{% endblock %}
+{% block content %}
+    {% load static %}
+   <section class="page-section clearfix">
+      <div class="container">
+        <div class="intro">
+          <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{%  static 'core/img/intro.jpeg' %}" alt="">
+          <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+            <h2 class="section-heading mb-4">
+              <span class="section-heading-upper">Déjate sorprender</span>
+              <span class="section-heading-lower">Te gustará</span>
+            </h2>
+            <p class="mb-3">Noticias, opiniones, montajes, exposiciones...todo centrado en este juguete que marcó nuestra infancia. Pasa y disfruta...
+            </p>
+            <div class="intro-button mx-auto">
+              <a class="btn btn-primary btn-xl" href="{%  url 'about' %}">Sobre mi</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mensaje -->
+    <section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">Aviso importante</span>
+                <span class="section-heading-lower">INFORMACION</span>
+              </h2>
+              <p class="mb-0">Los customs, imágenes, montajes que hacen referencia a cuerpos militares de diversa índole así como resto de tipologías,  solo busca representar pasajes históricos documentados sin afán de herir sensibilidades y sin enaltecer ideales políticos, religiosos... </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}
